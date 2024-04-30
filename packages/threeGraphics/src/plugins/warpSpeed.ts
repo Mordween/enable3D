@@ -124,7 +124,7 @@ export default class WarpSpeed {
         '',
         'void main() {',
         '',
-        'float h = normalize( vWorldPosition + offset ).y;',
+        'float h = normalize( vWorldPosition + offset ).z;',        // z up
         'gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h , 0.0), exponent ), 0.0 ) ), 1.0 );',
         '',
         '}'
@@ -151,6 +151,7 @@ export default class WarpSpeed {
 
     if (features.includes('camera')) {
       this.camera.position.set(0, 6, 12)
+      this.camera.position.up(0,0,1)  // z up
       Features = { camera: this.camera, ...Features }
     }
 
@@ -194,7 +195,7 @@ export default class WarpSpeed {
       texture.repeat.set(21, 21)
 
       // ground
-      const geometry = { name: 'ground', width: 21, height: 21, depth: 1, y: -0.5 }
+      const geometry = { name: 'ground', width: 21, height: 21, depth: 1, z: -0.5 }
       const material = {
         phong: { map: addGrid ? texture : null, color: 0xffffff }
       }

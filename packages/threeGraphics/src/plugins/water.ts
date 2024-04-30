@@ -47,7 +47,7 @@ const addWater = (scene: Scene, renderer: WebGLRenderer, config: AddWaterConfig 
   const groundMaterial = new MeshStandardMaterial({ color: 0x0077be, transparent: true, opacity: 0.8 })
   const ground = new Mesh(groundGeometry, groundMaterial)
   ground.position.set(x, y, z)
-  ground.rotation.x = Math.PI * -0.5
+  //ground.rotation.x = Math.PI * -0.5
   scene.add(ground)
 
   // water
@@ -63,7 +63,7 @@ const addWater = (scene: Scene, renderer: WebGLRenderer, config: AddWaterConfig 
     encoding: renderer.outputEncoding
   })
   water.position.set(x, y + 0.1, z)
-  water.rotation.x = Math.PI * -0.5
+  //water.rotation.x = Math.PI * -0.5
   scene.add(water)
 
   return { ground, water }

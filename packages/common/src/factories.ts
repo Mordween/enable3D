@@ -272,7 +272,7 @@ export default class Factories {
 
   private addGround(groundConfig: GroundConfig, materialConfig: MaterialConfig = {}): ExtendedObject3D {
     const obj = this.makeBox(groundConfig, materialConfig)
-    obj.rotateX(THREE_Math.degToRad(90))
+    // obj.rotateX(THREE_Math.degToRad(90))
     this.addExisting(obj)
     return obj
   }
