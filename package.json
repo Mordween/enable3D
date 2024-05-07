@@ -1,5 +1,5 @@
 {
-  "name": "enable3d-project",
+  "name": "enable3d",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -16,8 +16,6 @@
     "clean:dist": "npx rimraf -y packages/**/dist",
     "clean:bundles": "npx rimraf -y bundles",
     "prune": "node scripts/prune.mjs",
-    "postinstall": "lerna bootstrap --no-ci",
-    "lerna-version": "lerna version --no-commit-hooks --no-git-tag-version && npm run build && npm run bundle",
     "start:common": "cd packages/common && tsc --watch",
     "start:threeWrapper": "cd packages/threeWrapper && tsc --watch",
     "start:ammoPhysics": "cd packages/ammoPhysics && tsc --watch",
